@@ -3,18 +3,83 @@ import java.util.Scanner;
 class Employee
 {
 	/* Task 3B: Add instance variables */
+	private String firstName;
+	private String lastName;
+	private int employeeId;
+	private double salary;
   
    
 	/* Task 3C: Add three constructors */
+   public Employee()
+   {
+	   this.firstName = "";
+	   this.lastName = "";
+	   this.employeeId = 0;
+	   this.salary = 0;
+   }
    
+   public Employee(String first, String last)
+   {
+	   this.firstName = first;
+	   this.lastName = last;
+   }
    
-	/* Task 3D: Add set (mutator) and get (accessor) meethods
+   public Employee(String first, String last, int id, double wage)
+   {
+	   this.firstName = first;
+	   this.lastName = last;
+	   this.employeeId = id;
+	   this.salary = wage;
+   }
+   
+	/* Task 3D: Add set (mutator) and get (accessor) meethods*/
+	public void setFirstName(String name)
+	{
+		this.firstName = name;
+	}
+	public String getFirstName()
+	{
+		return this.firstName;
+	}
+	public void setLastName(String name)
+	{
+		this.lastName = name;
+	}
+	public String getLastName()
+	{
+		return this.lastName;
+	}
+	public void setEmployeeId(int id)
+	{
+		this.employeeId = id;
+	}
+	public int getEmployeeId()
+	{
+		return this.employeeId;
+	}
+	public void setSalary(double wage)
+	{
+		this.salary = wage;
+	}
+	public double getSalary()
+	{
+		return this.salary;
+	}
 
    
 	/* Task 3F: Add toString method */
+	@Override
+	public String toString()
+	{
+		return "Employee: " + this.employeeId + " Name: " this.firstName.toUpperCase() + " " this.lastName.toUpperCase() + "has salary of $" + this.salary;
+	}
    
    
 	/* Task 3G: Add equals method */
+	public Boolean equals(String name)
+	{
+		return name.compareToIgnoreCase(this.lastName);
+	}
    
 }
 
