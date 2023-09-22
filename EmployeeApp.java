@@ -72,8 +72,8 @@ class Employee
 	@Override
 	public String toString()
 	{
-		return String.format( " %s, %s \n %14s %d ", this.lastName, this.firstName, "ID Number:", this.employeeId);
-		//  "Employee: " + this.employeeId + " Name: " + this.firstName.toUpperCase() + " " + this.lastName.toUpperCase() + " has salary of $" + this.salary ;
+		return String.format( " %s, %s \n%-14s%3s %d \n%-14s%3s $%.2f ", this.lastName, this.firstName, "ID Number", ":", this.employeeId, "Salary", ":", this.salary);
+		
 	}
    
    
