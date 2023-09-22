@@ -1,4 +1,4 @@
-import java.util.Scanner;
+ import java.util.Scanner;
 
 class Employee
 {
@@ -12,14 +12,15 @@ class Employee
 	/* Task 3C: Add three constructors */
    public Employee()
    {
-	   this.firstName = "";
-	   this.lastName = "";
+	   this.firstName = "No First Name";
+	   this.lastName = "No Last Name";
 	   this.employeeId = 0;
 	   this.salary = 0;
    }
    
    public Employee(String first, String last)
    {
+	   this();
 	   this.firstName = first;
 	   this.lastName = last;
    }
@@ -71,14 +72,16 @@ class Employee
 	@Override
 	public String toString()
 	{
-		return "Employee: " + this.employeeId + " Name: " this.firstName.toUpperCase() + " " this.lastName.toUpperCase() + "has salary of $" + this.salary;
+		return String.format( " %s, %s \n %14s %d ", this.lastName, this.firstName, "ID Number:", this.employeeId);
+		//  "Employee: " + this.employeeId + " Name: " + this.firstName.toUpperCase() + " " + this.lastName.toUpperCase() + " has salary of $" + this.salary ;
 	}
    
    
 	/* Task 3G: Add equals method */
 	public Boolean equals(String name)
 	{
-		return name.compareToIgnoreCase(this.lastName);
+		
+		return name.equalsIgnoreCase(this.lastName);
 	}
    
 }
@@ -125,6 +128,26 @@ public class EmployeeApp
                 
 						// Task 3E: Prompt for user information and set the object 
 						// parameters via the mutator methods
+						
+						//employee ID set
+						System.out.print("Employee ID number: ");
+						inputInt = keyboard.nextInt();
+						employees[empCount].setEmployeeId( inputInt);
+						//employee First Name set
+						System.out.print("First Name: ");
+						inputString = keyboard.next();
+						System.out.print(""); //clears buffer
+						employees[empCount].setFirstName( inputString );
+						//employee Last Name set
+						System.out.print("Last Name: ");
+						inputString = keyboard.next();
+						employees[empCount].setLastName( inputString );
+						//employee Salary set
+						System.out.print("Salary: ");
+						inputDouble = keyboard.nextDouble();
+						employees[empCount].setSalary( inputDouble );
+						
+						
 
    
 						empCount++;
