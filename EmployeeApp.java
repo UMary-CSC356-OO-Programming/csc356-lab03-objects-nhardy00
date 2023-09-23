@@ -72,7 +72,7 @@ class Employee
 	@Override
 	public String toString()
 	{
-		return String.format( " %s, %s \n%-14s%3s %d \n%-14s%3s $%.2f ", this.lastName, this.firstName, "ID Number", ":", this.employeeId, "Salary", ":", this.salary);
+		return String.format( "%s, %s \n%.3s%-9s%s %d \n%.3s%-9s%s $%.2f ", this.lastName, this.firstName, "      ", "ID Number", ":", this.employeeId, "     ", "Salary", ":", this.salary);
 		
 	}
    
